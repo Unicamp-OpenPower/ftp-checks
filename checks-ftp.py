@@ -39,8 +39,9 @@ def main():
     base_dir, file, FTP_PASSWORD = _args()
 
     FTP_HOST = 'oplab9.parqtec.unicamp.br'
+    USER = 'jr-santos'
     ftp = FTP_TLS(FTP_HOST)
-    ftp.login(jr-santos, FTP_PASSWORD)
+    ftp.login(USER, FTP_PASSWORD)
     ftp.prot_p()    #Ativado proteção dos dados
 
     ftp.cwd(base_dir)
