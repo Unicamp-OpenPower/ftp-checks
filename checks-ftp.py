@@ -6,11 +6,11 @@ from ftplib import FTP_TLS
 notification = []
 
 def _args():
-    if len(argv) != 4:
-        print("Usage: python3 checks-ftp.py base-dir file ftp-password")
+    if len(argv) != 6:
+        print("Usage: python3 checks-ftp.py base-dir file ftp-host ftp-user ftp-password")
         exit(1)
 
-    return argv[1], argv[2], argv[3]
+    return argv[1], argv[2], argv[3], argv[4], argv[5]
 
 def downFile(ftp, fileName, localName):
     """ Realiza o download do arquivo denominado fileName """
@@ -36,12 +36,10 @@ def compareFile(ftp, fileName):
         notification.append('Os textos são diferentes em: ' + local)
 
 def main():
-    base_dir, file, FTP_PASSWORD = _args()
+    base_dir, file, FTP_HOST, FTP_USER , FTP_PASSWORD = _args()
 
-    FTP_HOST = 'oplab9.parqtec.unicamp.br'
-    USER = 'jr-santos'
     ftp = FTP_TLS(FTP_HOST)
-    ftp.login(USER, FTP_PASSWORD)
+    ftp.login(FTP_USER, FTP_PASSWORD)
     ftp.prot_p()    #Ativado proteção dos dados
 
     ftp.cwd(base_dir)
