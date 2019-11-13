@@ -38,7 +38,7 @@ def compareFile(ftp, fileName):
 def main():
     FTP_HOST = 'oplab9.parqtec.unicamp.br'
     ftp = FTP_TLS(FTP_HOST)
-    ftp.login(oplab-build, $FTP_PASSWORD)
+    ftp.login(jr-santos, $FTP_PASSWORD)
     ftp.prot_p()    #Ativado proteção dos dados
 
     base_dir, file = _args()
