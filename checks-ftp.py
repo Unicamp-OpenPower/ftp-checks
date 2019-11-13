@@ -32,8 +32,8 @@ def compareFile(ftp, fileName):
 
     local = ftp.pwd()
     if file[0] != file[1]:
-        print('Os textos são diferentes: ', local)
-        notification.append('Os textos são diferentes: ' + local)
+        print('Os textos são diferentes em: ', local)
+        notification.append('Os textos são diferentes em: ' + local)
 
 def main():
     base_dir, file, FTP_PASSWORD = _args()
