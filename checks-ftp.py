@@ -65,7 +65,7 @@ def main():
     ftp.prot_c()    #Fechando proteção de dados
     ftp.close()
 
-    print(len(notification))
+    print('O número de problemas encontrados foi: ', len(notification))
 
     if len(notification) >= 1:
         exit(22)
